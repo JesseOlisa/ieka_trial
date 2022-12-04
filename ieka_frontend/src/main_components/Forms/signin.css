@@ -9,4 +9,5 @@
     content: "";
     top: 0;
     right: 2rem;
+    z-index: -2;
 }
