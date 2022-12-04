@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root {
+  font-family: Inter, Aven, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  --bg-primary: green;
+  --bg-secondary: rgb(84, 179, 84);
+  --text-primary: white;
+  --text-secondary: rgb(121, 206, 121);
+  --fs-normal: 1rem;
+  --fs-large: 1.2rem;
+  --fs-xlarge: 3rem;
+  --fs-small: .9rem;
+}
+
+@media screen and (max-width: 1200px) {
+  :root{
+    --fs-xlarge: 2rem;
+    --fs-large: 1rem;
+  }
+  
+}
+@media screen and (max-width: 450px) {
+  :root{
+    --fs-xlarge: 1.5rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: var(--text-primary)
+}
+
+button {
+  outline: none;
+  display: block;
+}
+input[type='text'], input[type='email'], input[type='password'], input[type='tel'] {
+  outline: none;
+  border: solid 1.5px #D3D3D3;  
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: Inter, Aven, Helvetica, Arial, sans-serif;
+  border-radius: .75rem;
+  box-shadow: 0 0 4px 1px #D3D3D3 ;
+  width: 100%;
+  margin-bottom: .7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body, html {
+  margin: 0;
+  /* display: flex;
+  place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col{
+  flex-direction: column !important;
+}
+.btn{
+  padding: .5rem .65rem;
+  border-radius: 6px;
+  border: none;
+  font-family: Inter, Aven, Helvetica, Arial, sans-serif;
+  background-color: var(--text-primary);
+  color: black;
+  font-size: .85rem;
+  cursor: pointer;
+}
+.btn-color {
+  background-color: var(--bg-secondary);
+  font-size: 1rem;
+  padding: 0.75rem !important;
+  color: var(--text-primary);
+}
+.btn-auth {
+  width: 100%;
+  background-color: var(--bg-secondary);
+  font-size: 1rem;
+  color: var(--text-primary);
+  padding: 0.75rem !important;
+  margin-bottom: .5rem;
+}
+.btn-disable{
+  pointer-events: none;
+}
+
+.auth--container {
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth--container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(https://www.toptal.com/designers/subtlepatterns/uploads/paisley.png);
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  opacity: .6;
+}
+.form--control {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+.auth-content {
+  background: white;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 5px rgb(146, 145, 145);
+  border-radius: 10px;
+  min-width: 25rem;
+  gap: 5rem;
+}
