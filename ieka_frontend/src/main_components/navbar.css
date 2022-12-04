@@ -65,4 +65,7 @@ a.active::before{
     nav {
         display: none !important;
     }
+    .sign-in--container {
+        display: flex !important;
+    }
 }
