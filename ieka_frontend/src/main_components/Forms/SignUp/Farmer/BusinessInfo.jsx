@@ -1,6 +1,10 @@
 import React from 'react'
+import { useFormContext } from '../context/FormContext'
+
 
 const BusinessInfo = () => {
+	const { formState, handleChange, errorInfo, errorStyle } = useFormContext()
+
   return (
     <div className='business-info'>
 						<div>
@@ -9,8 +13,11 @@ const BusinessInfo = () => {
 								type='text'
 								name='farm-state'
 								id='farm-state'
+								value={formState.farmState}
+								onChange={(e) => {handleChange(e)}}
 								required
 							/>
+							<p className='error-msg'>{errorInfo.farmState}</p>
 						</div>
 						<div>
 							<label htmlFor='farm-address'>farm address</label>
@@ -18,8 +25,11 @@ const BusinessInfo = () => {
 								type='text'
 								name='farm-address'
 								id='farm-address'
+								value={formState.farmAddress}
+								onChange={(e) => {handleChange(e)}}
 								required
 							/>
+							<p className='error-msg'>{errorInfo.farmAddress}</p>
 						</div>
 						<div>
 							<label htmlFor='farm-country'>farm country</label>
@@ -27,7 +37,10 @@ const BusinessInfo = () => {
 								type='text'
 								id='farm-country'
 								name='farm-country'
+								value={formState.farmCountry}
+								onChange={(e) => {handleChange(e)}}
 							/>
+							<p className='error-msg'>{errorInfo.farmCountry}</p>
 						</div>
 						<div>
 							<label htmlFor='products'>your agro products</label>
@@ -36,8 +49,11 @@ const BusinessInfo = () => {
 								id='products'
 								cols='50'
 								rows='3'
+								value={formState.agroProducts}
+								onChange={(e) => {handleChange(e)}}
 								required
 							></textarea>
+							<p className='error-msg'>{errorInfo.agroProducts}</p>
 						</div>
 						<div>
 							<label htmlFor='image'>select image</label>
