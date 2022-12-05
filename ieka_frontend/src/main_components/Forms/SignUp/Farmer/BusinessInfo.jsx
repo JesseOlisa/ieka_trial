@@ -11,7 +11,7 @@ const BusinessInfo = () => {
 							<label htmlFor='farm-state'>farm state</label>
 							<input
 								type='text'
-								name='farm-state'
+								name='farmState'
 								id='farm-state'
 								value={formState.farmState}
 								onChange={(e) => {handleChange(e)}}
@@ -23,7 +23,7 @@ const BusinessInfo = () => {
 							<label htmlFor='farm-address'>farm address</label>
 							<input
 								type='text'
-								name='farm-address'
+								name='farmAddress'
 								id='farm-address'
 								value={formState.farmAddress}
 								onChange={(e) => {handleChange(e)}}
@@ -35,7 +35,7 @@ const BusinessInfo = () => {
 							<label htmlFor='farm-country'>farm country</label>
 							<input
 								type='text'
-								id='farm-country'
+								id='farmCountry'
 								name='farm-country'
 								value={formState.farmCountry}
 								onChange={(e) => {handleChange(e)}}
@@ -45,7 +45,7 @@ const BusinessInfo = () => {
 						<div>
 							<label htmlFor='products'>your agro products</label>
 							<textarea
-								name='products'
+								name='agroproducts'
 								id='products'
 								cols='50'
 								rows='3'
