@@ -15,7 +15,7 @@ const BusinessInfo = () => {
 								id='farm-state'
 								value={formState.farmState}
 								onChange={(e) => {handleChange(e)}}
-								required
+								// required
 							/>
 							<p className='error-msg'>{errorInfo.farmState}</p>
 						</div>
@@ -27,7 +27,7 @@ const BusinessInfo = () => {
 								id='farm-address'
 								value={formState.farmAddress}
 								onChange={(e) => {handleChange(e)}}
-								required
+								// required
 							/>
 							<p className='error-msg'>{errorInfo.farmAddress}</p>
 						</div>
@@ -35,8 +35,8 @@ const BusinessInfo = () => {
 							<label htmlFor='farm-country'>farm country</label>
 							<input
 								type='text'
-								id='farmCountry'
-								name='farm-country'
+								id='farm-country'
+								name='farmCountry'
 								value={formState.farmCountry}
 								onChange={(e) => {handleChange(e)}}
 							/>
@@ -45,13 +45,13 @@ const BusinessInfo = () => {
 						<div>
 							<label htmlFor='products'>your agro products</label>
 							<textarea
-								name='agroproducts'
+								name='agroProducts'
 								id='products'
 								cols='50'
 								rows='3'
 								value={formState.agroProducts}
 								onChange={(e) => {handleChange(e)}}
-								required
+								// required
 							></textarea>
 							<p className='error-msg'>{errorInfo.agroProducts}</p>
 						</div>

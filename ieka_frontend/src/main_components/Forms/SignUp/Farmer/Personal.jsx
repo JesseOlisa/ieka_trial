@@ -9,7 +9,7 @@ const Personal = () => {
   return (
     <div className='biodata--container'>
 						<div>
-							<label htmlFor='firstname'>first name</label>
+							<label htmlFor='firstname'>First name</label>
 							<input
 								type='text'
 								name='firstname'
@@ -21,7 +21,7 @@ const Personal = () => {
 							<p className='error-msg'>{errorInfo.firstname}</p>
 						</div>
 						<div>
-							<label htmlFor='lastname'>last name</label>
+							<label htmlFor='lastname'>Last name</label>
 							<input
 								type='text'
 								name='lastname'
@@ -33,7 +33,7 @@ const Personal = () => {
 							<p className='error-msg'>{errorInfo.lastname}</p>
 						</div>
 						<div>
-							<label htmlFor='address'>address</label>
+							<label htmlFor='address'>Address</label>
 							<input
 								type='text'
 								name='address'
@@ -45,7 +45,7 @@ const Personal = () => {
 							<p className='error-msg'>{errorInfo.address}</p>
 						</div>
 						<div>
-							<label htmlFor='email'>email</label>
+							<label htmlFor='email'>Email</label>
 							<input
 								type='email'
 								name='email'
@@ -56,7 +56,7 @@ const Personal = () => {
 							/>
 						</div>
 						<div>
-							<label htmlFor='password'>passcode</label>
+							<label htmlFor='password'>Passcode</label>
 							<input
 								type='password'
 								name='password'
@@ -67,7 +67,7 @@ const Personal = () => {
 							<p className='error-msg'>{errorInfo.password}</p>
 						</div>
 						<div>
-							<label htmlFor='phone'>phone number</label>
+							<label htmlFor='phone'>Phone number</label>
 							<input
 								type='tel'
 								name='phone'

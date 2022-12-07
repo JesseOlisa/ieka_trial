@@ -5,11 +5,14 @@ import { useFormContext } from '../context/FormContext'
 const AccountInfo = () => {
 
 	const { formState, handleChange, errorInfo, errorStyle } = useFormContext()
-
+	const radioStyle = {
+		marginTop: "0",
+		marginRight: "1rem"
+	}
   return (
     <div className='section-2'>
 						<div>
-							<h3>gender</h3>
+							<h4>Gender</h4>
 							<input
 								type='radio'
 								name='gender'
@@ -18,7 +21,7 @@ const AccountInfo = () => {
 								checked={formState.gender === "male"}
 								onChange={(e) => handleChange(e)}
 							/>
-							<label htmlFor='male'>male</label>
+							<label htmlFor='male' style={radioStyle}>Male</label>
 							<input
 								type='radio'
 								name='gender'
@@ -27,7 +30,7 @@ const AccountInfo = () => {
 								checked={formState.gender === "female"}
 								onChange={(e) => handleChange(e)}
 							/>
-							<label htmlFor='female'>Female</label>
+							<label htmlFor='female' style={radioStyle}>Female</label>
 						</div>
 						<div>
 							<label htmlFor='state-of-origin'>State-of-Origin</label>
@@ -42,7 +45,7 @@ const AccountInfo = () => {
 							<p className='error-msg'>{errorInfo.stateOrigin}</p>
 						</div>
 						<div>
-							<label htmlFor='residence-state'>residence state</label>
+							<label htmlFor='residence-state'>Residence state</label>
 							<input
 								type='text'
 								name='residenceState'
@@ -54,7 +57,7 @@ const AccountInfo = () => {
 							<p className='error-msg'>{errorInfo.residenceState}</p>
 						</div>
 						<div>
-							<label htmlFor='residence-country'>residence country</label>
+							<label htmlFor='residence-country'>Residence country</label>
 							<input
 								type='text'
 								name='residenceCountry'

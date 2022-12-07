@@ -8,13 +8,15 @@ import SignUp from './main_components/Forms/Signup';
 import Aboutus from './Pages/Home/Aboutus';
 import Categories from './Pages/Categories';
 import Home from './Pages/Home/Home';
+import CustomerSignup from './main_components/Forms/SignUp/Customer/CustomerSignup';
+import FarmerSignup from './main_components/Forms/SignUp/Farmer/FarmerSignup';
 
 function App() {
 	const location = useLocation();
 	return (
 		<div className='main--container'>
 			{location.pathname === '/sign-in' ||
-			location.pathname.includes("sign-up") ? null : (
+			location.pathname.includes('sign-up') ? null : (
 				<NavBar />
 			)}
 
@@ -39,10 +41,20 @@ function App() {
 					path='/categories'
 					element={<Categories />}
 				></Route>
+				<Route
+					path='/sign-up/customer-signup'
+					element={<CustomerSignup />}
+				></Route>
+				<Route
+					path='/sign-up/farmer-signup'
+					element={<FarmerSignup />}
+				></Route>
 			</Routes>
 
 			{location.pathname === '/sign-in' ||
-			location.pathname.includes("sign-up") ? null : <Footer />}
+			location.pathname.includes('sign-up') ? null : (
+				<Footer />
+			)}
 		</div>
 	);
 }

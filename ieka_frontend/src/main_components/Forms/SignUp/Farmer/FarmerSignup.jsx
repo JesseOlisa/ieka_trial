@@ -1,4 +1,4 @@
-import React, { useState, useReducer} from 'react';
+import React, { useState, useReducer } from 'react';
 import Personal from './Personal';
 import AccountInfo from './AccountInfo';
 import BusinessInfo from './BusinessInfo';
@@ -7,7 +7,7 @@ import { FARMER_INFO } from './FARMER_INFO';
 import { FormProvider } from '../context/FormContext';
 import { FormReducer } from '../reducer/FormReducer';
 
-import { formValidation } from '../utils/formValidation';
+import { farmerFormValidation } from '../utils/formValidation';
 
 const FarmerSignup = () => {
 	const stepProgress = [
@@ -31,11 +31,11 @@ const FarmerSignup = () => {
 	const [step, setStep] = useState(1);
 	const [progressInfo, setProgressInfo] = useState(stepProgress);
 	const [errorInfo, setErrorInfo] = useState({});
-	// let error
-	// reducer
+
+	// This links the formstate state to the reducers
 	const [formState, dispatch] = useReducer(FormReducer, FARMER_INFO);
 
-	// console.log(state)
+	// This renders different forms based on the steps
 	const currentStep = () => {
 		switch (step) {
 			case 1:
@@ -48,21 +48,25 @@ const FarmerSignup = () => {
 				break;
 		}
 	};
-	
+
 	//FUNCTIONS
 
-	//onClick event for next
+	//onClick event for next step
 	const btnNext = () => {
-		let newObj = formValidation(formState, step); //this assigns errors to new onobj if any
-		setErrorInfo(newObj); //this displays errorinfo in the components
-		console.log(newObj)
-		if(Object.keys(newObj).length === 0 ) {
+		//this assigns errors to a new object if any
+		let newObj = farmerFormValidation(formState, step);
+
+		//this displays errorinfo in the components if any
+		setErrorInfo(newObj);
+
+		//this makes sure we only proceed to next if errorobj is empty
+		if (Object.keys(newObj).length === 0) {
 			setStep((prev) => prev + 1);
 			updateProgress(step);
 		}
-		console.log(formState)
 	};
-	//onclick event for prev
+
+	//onclick event for previous step
 	const btnBack = () => {
 		setStep((prev) => prev - 1);
 		updateProgress(step - 1);
@@ -74,6 +78,7 @@ const FarmerSignup = () => {
 		newprogress[index].active = !newprogress[index].active;
 		setProgressInfo(newprogress);
 	};
+
 	// this function updates the style if input has error messages
 	const errorStyle = (name) => {
 		return name in errorInfo ? 'danger--input' : '';
@@ -87,24 +92,44 @@ const FarmerSignup = () => {
 		});
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		let newObj = farmerFormValidation(formState, step); //this assigns errors to new onobj if any
+		setErrorInfo(newObj);
+		if (Object.keys(newObj).length === 0) {
+			console.log(formState)
+		}
+		
+	};
 
 	return (
 		<div className='auth--container flex-col'>
-			<form className='form--control'>
+			<h2>Farmer Sign-up</h2>
+			<form
+				className='form--control'
+				onSubmit={handleSubmit}
+			>
+				{/* this displays stepper progress */}
 				<p className='error'></p>
 				<Stepper
 					step={step}
 					stepProgress={progressInfo}
 				/>
-
+				{/* this displays the steps */}
 				<FormProvider
 					value={{ formState, handleChange, errorInfo, errorStyle }}
 				>
-					<div className='sections'>{currentStep()}</div>
+					<div
+						className='sections'
+						animate={{
+							x: 10,
+						}}
+					>
+						{currentStep()}
+					</div>
 				</FormProvider>
-
-			</form>
-			<div className='stepper--controls flex'>
+				{/* this displays button control */}
+				<div className='stepper--controls flex'>
 					<button
 						type='button'
 						className={`btn btn-color ${step == 1 ? 'btn-disable' : ''}`}
@@ -113,24 +138,24 @@ const FarmerSignup = () => {
 						Back
 					</button>
 
-					{step === stepProgress.length ? (
-						<input
-							type='submit'
-							name='submit'
-							value='submit'
-							className='btn btn-color'
-						/>
-					) : (
+					{step !== stepProgress.length ? (
 						<button
-							// type='button'
+							key='next-button'
 							className='btn btn-color'
 							onClick={() => btnNext()}
 						>
 							Next
 						</button>
+					) : (
+						<button
+							className='btn btn-color'
+							key='submit-button'
+						>
+							Submit
+						</button>
 					)}
 				</div>
-
+			</form>
 		</div>
 	);
 };

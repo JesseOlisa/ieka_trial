@@ -1,3 +1,22 @@
 .stepper--controls {
     justify-content: space-between !important;
+    margin-block: 1rem;
+}
+.error-msg{
+    color: #F83F23 !important;
+    font-size: 14px;
+}
+.name--section {
+    gap: 1rem;
+}
+.name--section input {
+    width: 80%;
+}
+.choice-container {
+    width: 20rem;
+    justify-content: space-between !important;
+    padding: 1rem;
+}
+.container{
+    min-height: 100vh;
 }
