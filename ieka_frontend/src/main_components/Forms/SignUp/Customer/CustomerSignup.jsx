@@ -10,17 +10,19 @@ const CustomerSignup = () => {
 
 	const [formState, dispatch] = useReducer(FormReducer, CUSTOMER_INFO);
 	const [errorInfo, setErrorInfo] = useState({});
-	const [allCountries, setAllCountries] = useState([]);
+	// const [allCountries, setAllCountries] = useState([]);
 	const [allStates, setAllStates] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState('');
 	const [selectedState, setselectedState] = useState('');
 
-	// useEffect to set State once all states are selected
-	useEffect(() => {
-		let countries = Country.getAllCountries();
-		setAllCountries(countries);
-	}, []);
+	const Nigeria = Country.getCountryByCode('NG');
 
+	// useEffect to set State once all states are selected
+	// useEffect(() => {
+	// 	let countries = Country.getCountryByCode('NG').isoCode;
+	// 	setAllCountries(countries);
+	// }, []);
+	// console.log(allCountries)
 	// useEffect to set State once all states are selected
 	useEffect(() => {
 		let state = State.getStatesOfCountry(selectedCountry);
@@ -38,17 +40,21 @@ const CustomerSignup = () => {
 	//handle submit
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let newError = customerFormValidation(formState)
-		setErrorInfo(newError)
+		let newError = customerFormValidation(formState);
+		setErrorInfo(newError);
 		if (Object.keys(newError).length === 0) {
-			console.log('form submitted')
+			console.log('form submitted');
+			console.log(formState);
 		}
-	}
+	};
 
 	return (
-		<div className='auth--container flex'>
+		<div className='auth--container flex flex-col'>
 			<h2>Customer Signup</h2>
-			<form className='form--control' onSubmit={handleSubmit}>
+			<form
+				className='form--control'
+				onSubmit={handleSubmit}
+			>
 				<div className='flex name--section'>
 					{/* firstname */}
 					<div>
@@ -167,8 +173,14 @@ const CustomerSignup = () => {
 						}}
 					>
 						<option value=''>--Choose Country--</option>
+						<option
+							value={Nigeria.name}
+							data-country-iso={Nigeria.isoCode}
+						>
+							Nigeria
+						</option>
 
-						{allCountries.map((countryName) => {
+						{/* {allCountries.map((countryName) => {
 							return (
 								<option
 									value={countryName.name}
@@ -178,7 +190,7 @@ const CustomerSignup = () => {
 									{countryName.name}
 								</option>
 							);
-						})}
+						})} */}
 					</select>
 					<select
 						name='residenceState'
@@ -203,7 +215,6 @@ const CustomerSignup = () => {
 					</select>
 				</div>
 				<button className='btn btn-color'>Sign Up</button>
-
 			</form>
 		</div>
 	);
