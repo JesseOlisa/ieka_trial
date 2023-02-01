@@ -1,45 +1,29 @@
 import { useState } from 'react';
-import { Routes, Route, Outlet, useLocation } from 'react-router-dom';
-import './App.css';
-import Footer from './main_components/Footer';
-import NavBar from './main_components/NavBar';
-import SignIn from './main_components/Forms/SignIn';
-import SignUp from './main_components/Forms/Signup';
-import Aboutus from './Pages/Home/Aboutus';
-import Categories from './Pages/Categories';
-import Home from './Pages/Home/Home';
-import CustomerSignup from './main_components/Forms/SignUp/Customer/CustomerSignup';
-import FarmerSignup from './main_components/Forms/SignUp/Farmer/FarmerSignup';
+import { Routes, Route } from 'react-router-dom';
 
+import Home from './Pages/Site/Home';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import SignUp from './auth/SignUp';
+import SignIn from './auth/SignIn';
+import CustomerSignup from './auth/Customer/CustomerSignup';
+import FarmerSignup from './auth/Farmer/FarmerSignup';
+import { RequireAuth } from './components/RequireAuth';
+import AdminDashboard from './Pages/Dashboard/AdminDashboard';
+import CustomerDashboard from './Pages/Dashboard/CustomerDashboard';
+import CourierDashboard from './Pages/Dashboard/CourierDashboard';
+import FarmerDashboard from './Pages/Dashboard/FarmerDashboard';
 function App() {
-	const location = useLocation();
 	return (
 		<div className='main--container'>
-			{location.pathname === '/sign-in' ||
-			location.pathname.includes('sign-up') ? null : (
-				<NavBar />
-			)}
-
 			<Routes>
+				{/* AUTH PAGES */}
 				<Route
-					path='sign-in'
+					path='sign-in/'
 					element={<SignIn />}
 				></Route>
 				<Route
-					path='sign-up'
+					path='sign-up/*'
 					element={<SignUp />}
-				></Route>
-				<Route
-					index
-					element={<Home />}
-				></Route>
-				<Route
-					path='/about-us'
-					element={<Aboutus />}
-				></Route>
-				<Route
-					path='/categories'
-					element={<Categories />}
 				></Route>
 				<Route
 					path='/sign-up/customer-signup'
@@ -49,12 +33,42 @@ function App() {
 					path='/sign-up/farmer-signup'
 					element={<FarmerSignup />}
 				></Route>
-			</Routes>
 
-			{location.pathname === '/sign-in' ||
-			location.pathname.includes('sign-up') ? null : (
-				<Footer />
-			)}
+				{/* MAIN APP PAGES */}
+				<Route
+					path='/*'
+					element={<Home />}
+				></Route>
+				{/* PROTECTED ROUTES */}
+				<Route element={<RequireAuth allowedRoles={['admin']} />}>
+					{/* <Route
+						path='/dashboard/*'
+						element={<Dashboard />}
+					></Route> */}
+					<Route
+						path='/dashboard/admin'
+						element={<AdminDashboard />}
+					/>
+				</Route>
+				<Route element={<RequireAuth allowedRoles={['farmer']} />}>
+					<Route
+						path='/dashboard/farmer'
+						element={<FarmerDashboard />}
+					/>
+				</Route>
+				<Route element={<RequireAuth allowedRoles={['courier']} />}>
+					<Route
+						path='/dashboard/courier'
+						element={<CourierDashboard />}
+					/>
+				</Route>
+				<Route element={<RequireAuth allowedRoles={['customer']} />}>
+					<Route
+						path='/dashboard/customer'
+						element={<CustomerDashboard />}
+					/>
+				</Route>
+			</Routes>
 		</div>
 	);
 }

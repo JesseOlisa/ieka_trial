@@ -1,0 +1,178 @@
+{
+    "ads": [
+        {
+            "id": 1,
+            "image": "ad_images/hero_1.jpg"
+        },
+        {
+            "id": 2,
+            "image": "ad_images/hero_2.jpg"
+        },
+        {
+            "id": 3,
+            "image": "ad_images/hero_3.png"
+        },
+        {
+            "id": 4,
+            "image": "ad_images/hero_4.jpg"
+        } 
+    ],
+    "topProducts": [
+        {
+            "id": 1,
+            "title": "Rice",
+            "image": "crops/cereals/rice.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Mazie",
+            "image": "crops/cereals/maize.jpg"
+        },
+        {
+            "id": 3,
+            "title": "garri",
+            "image": "crops/cereals/garri.jpeg"
+        },
+        {
+            "id": 4,
+            "title": "beans",
+            "image": "crops/pulses/beans.jpg"
+        },
+        {
+            "id": 5,
+            "title": "yam",
+            "image": "crops/vegetables/yam.jpg"
+        },
+        {
+            "id": 6,
+            "title": "cassava",
+            "image": "crops/vegetables/cassava.jpg"
+        }
+    ],
+    "tubers": [
+        {
+            "id": 1,
+            "title": "yam",
+            "image": "crops/vegetables/yam.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Potato",
+            "image": "crops/vegetables/potato.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Cocoyam",
+            "image": "crops/vegetables/cocoyam.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Carrot",
+            "image": "crops/vegetables/carrot.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Sweet potato",
+            "image": "crops/vegetables/sweet potato.jpg"
+        },
+        {
+            "id": 6,
+            "title": "onion",
+            "image": "crops/vegetables/onion.jpg"
+        },
+        {
+            "id": 7,
+            "title": "garlic",
+            "image": "crops/vegetables/garlic.jpg"
+        },
+        {
+            "id": 8,
+            "title": "cassava",
+            "image": "crops/vegetables/cassava.jpg"
+        }
+    ],
+    "vegetables": [
+        {
+            "id": 1,
+            "title": "Cabbage",
+            "image": "crops/vegetables/cabbage.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Cucumber",
+            "image": "crops/vegetables/cucumber.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Lettuce",
+            "image": "crops/vegetables/lettuce.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Okra",
+            "image": "crops/vegetables/okra.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Tomato",
+            "image": "crops/vegetables/tomato.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Spinach",
+            "image": "crops/vegetables/spinach.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Pumpkin",
+            "image": "crops/vegetables/pumpkin.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Soybeans",
+            "image": "crops/pulses/soybeans.jpg"
+        }
+    ],
+    "animals": [
+        {
+            "id": 1,
+            "title": "Parrot",
+            "image": "animals/pets/parrot.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Cow",
+            "image": "animals/dairy/cow.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Dog",
+            "image": "animals/pets/dog.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Catfish",
+            "image": "animals/aquaculture/catfish.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Cats",
+            "image": "animals/pets/cat.jpg"
+        },
+        {
+            "id": 6,
+            "title": "fowl",
+            "image": "animals/poultry/fowl.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Rabbit",
+            "image": "animals/pets/rabbit.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Goats",
+            "image": "animals/dairy/goat.jpg"
+        }
+    ]
+}

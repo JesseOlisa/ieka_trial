@@ -1,0 +1,9 @@
+export { default as Overview } from './overview.png';
+export { default as Customers } from './customers.png';
+export { default as Help } from './help.png';
+export { default as Orders } from './orders.png';
+export { default as Products } from './products.png';
+export { default as Reports } from './reports.png';
+export { default as Settings } from './settings.png';
+export { default as Shipment } from './shipment.png';
+export { default as Transactions } from './Transactions.png';
