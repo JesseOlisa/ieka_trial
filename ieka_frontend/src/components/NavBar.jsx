@@ -10,6 +10,7 @@ import './navbar.css';
 
 const NavBar = () => {
 	const [toggleNav, setToggleNav] = useState(false);
+	const [showSignInOptions, setShowSignInOptions] = useState(false);
 
 	function toggleNavbar() {
 		setToggleNav((prevState) => !prevState);
@@ -36,13 +37,38 @@ const NavBar = () => {
 				<div className='search--container'>
 					<BsSearch className='search-icon' />
 				</div>
-				<div className='btn--container'>
-					<Link
-						to='sign-in'
-						className='btn'
+				<div className='btn--container relative'>
+					<button
+						type='button'
+						className='bg-white rounded-lg px-3 p-2'
+						onFocus={() => setShowSignInOptions(true)}
+						// onBlur={() => setShowSignInOptions(false)}
 					>
 						Sign in
-					</Link>
+					</button>
+					{showSignInOptions && (
+						<div className='absolute bg-white flex flex-col gap-3 text-base z-10 px-3 py-2 border-green-500 border top-10 -left-2'>
+							<Link
+								to='/dashboard/customer'
+								className='text-gray-700 hover:font-semibold transition-all duration-150'
+							>
+								Customer
+							</Link>
+							<Link
+								to='/dashboard/farmer'
+								className='text-gray-700 hover:font-semibold transition-all duration-150'
+							>
+								Farmer
+							</Link>
+							{/* <a
+								href='http://www.google.com'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								Google
+							</a> */}
+						</div>
+					)}
 				</div>
 			</div>
 			<div

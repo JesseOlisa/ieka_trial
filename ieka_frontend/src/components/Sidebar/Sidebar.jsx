@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import { SideBarLinks, SettingsLinks } from '../utils/data';
+import { SideBarLinks, SettingsLinks } from '../../utils/data';
 
 const isNotActiveStyle =
 	'flex items-center py-3 w-full px-7 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 const isActiveStyle =
 	'flex items-center py-3 w-full px-7 gap-3 text-gray-600 bg-green-200 font-extrabold border-r-2 border-green-700 transition-all duration-200 ease-in-out capitalize';
 
-const Sidebar = ({ closeSidebar }) => {
+const Sidebar = ({ closeSidebar, sideBarLinks }) => {
 	return (
 		<div className='flex flex-col bg-white overflow-y-scroll min-w-210 hide-scrollbar shadow-md'>
 			<div className='flex flex-col w-full h-95vh md:h-full justify-between'>

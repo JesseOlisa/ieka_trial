@@ -11,7 +11,7 @@ const style = {
 };
 
 const SignIn = () => {
-	const { auth, setAuth } = useAuth();
+	const { setAuth } = useAuth();
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || '/';

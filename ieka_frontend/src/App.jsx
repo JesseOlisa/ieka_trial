@@ -2,16 +2,20 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './Pages/Site/Home';
-import Dashboard from './Pages/Dashboard/Dashboard';
+// import Dashboard from './Pages/Dashboard/Dashboard';
 import SignUp from './auth/SignUp';
 import SignIn from './auth/SignIn';
 import CustomerSignup from './auth/Customer/CustomerSignup';
 import FarmerSignup from './auth/Farmer/FarmerSignup';
 import { RequireAuth } from './components/RequireAuth';
-import AdminDashboard from './Pages/Dashboard/AdminDashboard';
-import CustomerDashboard from './Pages/Dashboard/CustomerDashboard';
-import CourierDashboard from './Pages/Dashboard/CourierDashboard';
-import FarmerDashboard from './Pages/Dashboard/FarmerDashboard';
+// import DashboardRoutes from './routes/DashboardRoutes';
+import {
+	AdminDashboard,
+	CustomerDashboard,
+	CourierDashboard,
+	FarmerDashboard,
+} from './Pages/Dashboard/index';
+
 function App() {
 	return (
 		<div className='main--container'>
@@ -39,29 +43,33 @@ function App() {
 					path='/*'
 					element={<Home />}
 				></Route>
-				{/* PROTECTED ROUTES */}
+
+				{/* DASHBOARD ROUTES */}
+
+				{/* ADMIN */}
 				<Route element={<RequireAuth allowedRoles={['admin']} />}>
-					{/* <Route
-						path='/dashboard/*'
-						element={<Dashboard />}
-					></Route> */}
 					<Route
 						path='/dashboard/admin'
 						element={<AdminDashboard />}
 					/>
 				</Route>
+
+				{/* FARMER */}
 				<Route element={<RequireAuth allowedRoles={['farmer']} />}>
 					<Route
 						path='/dashboard/farmer'
 						element={<FarmerDashboard />}
 					/>
 				</Route>
+
+				{/* COURIER */}
 				<Route element={<RequireAuth allowedRoles={['courier']} />}>
 					<Route
 						path='/dashboard/courier'
 						element={<CourierDashboard />}
 					/>
 				</Route>
+				{/* CUSTOMER */}
 				<Route element={<RequireAuth allowedRoles={['customer']} />}>
 					<Route
 						path='/dashboard/customer'
