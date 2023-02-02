@@ -25,25 +25,26 @@ function App() {
 				<Route
 					path='sign-in/'
 					element={<SignIn />}
-				></Route>
+				/>
 				<Route
 					path='sign-up/*'
 					element={<SignUp />}
-				></Route>
+				/>
 				<Route
 					path='/sign-up/customer-signup'
 					element={<CustomerSignup />}
-				></Route>
+				/>
 				<Route
 					path='/sign-up/farmer-signup'
 					element={<FarmerSignup />}
-				></Route>
+				/>
 
 				{/* MAIN APP PAGES */}
 				<Route
 					path='/*'
 					element={<Home />}
-				></Route>
+					errorElement={<Notfound />}
+				/>
 
 				{/* DASHBOARD ROUTES */}
 
@@ -77,11 +78,6 @@ function App() {
 						element={<CustomerDashboard />}
 					/>
 				</Route>
-
-				<Route
-					path='*'
-					element={<Notfound />}
-				/>
 			</Routes>
 		</div>
 	);

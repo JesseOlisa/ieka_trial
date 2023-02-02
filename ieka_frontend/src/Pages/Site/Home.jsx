@@ -9,7 +9,7 @@ import Notfound from '../404/Notfound';
 
 const Home = () => {
 	return (
-		<div className='main--container'>
+		<div className='main--container relative'>
 			<NavBar />
 			<Routes>
 				<Route
@@ -24,8 +24,15 @@ const Home = () => {
 					path='/categories'
 					element={<Categories />}
 				></Route>
+				<Route
+					path='*'
+					element={<Notfound />}
+				/>
 			</Routes>
 			<Footer />
+			<section>
+				<Routes></Routes>
+			</section>
 		</div>
 	);
 };
