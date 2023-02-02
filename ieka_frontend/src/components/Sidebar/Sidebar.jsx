@@ -8,7 +8,7 @@ const isNotActiveStyle =
 const isActiveStyle =
 	'flex items-center py-3 w-full px-7 gap-3 text-gray-600 bg-green-200 font-extrabold border-r-2 border-green-700 transition-all duration-200 ease-in-out capitalize';
 
-const Sidebar = ({ closeSidebar, sideBarLinks }) => {
+const Sidebar = ({ closeSidebar, sideBarLinks, role }) => {
 	return (
 		<div className='flex flex-col bg-white overflow-y-scroll min-w-210 hide-scrollbar shadow-md'>
 			<div className='flex flex-col w-full h-95vh md:h-full justify-between'>
@@ -24,7 +24,7 @@ const Sidebar = ({ closeSidebar, sideBarLinks }) => {
 						{sideBarLinks.map((sidebarLink) => (
 							<NavLink
 								key={sidebarLink.title}
-								to={`/dashboard/${sidebarLink.title}`}
+								to={`/dashboard/${role}/${sidebarLink.title}`}
 								className={({ isActive }) =>
 									isActive ? isActiveStyle : isNotActiveStyle
 								}

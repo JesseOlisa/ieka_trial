@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
+import { useAuth } from '../hooks/useAuth';
 
 const DashboardLayout = ({ sidebarLinks }) => {
+	const { auth } = useAuth(); //This gets roles for dynamic routing
 	const [openNav, setOpenNav] = useState(false);
 	const handleCloseSidebar = () => {
 		if (openNav) setOpenNav(false);
 	};
+	console.log(auth);
 	return (
 		<>
 			{/* DESKTOP SIDEBAR */}
 			<div className='hidden md:flex h-screen flex-initial'>
-				<Sidebar sideBarLinks={sidebarLinks} />
+				<Sidebar
+					sideBarLinks={sidebarLinks}
+					role={auth.roles} //for dynamic routing
+				/>
 			</div>
 			{/* MOBILE SIDEBAR */}
 			<div className='flex md:hidden w-full'>

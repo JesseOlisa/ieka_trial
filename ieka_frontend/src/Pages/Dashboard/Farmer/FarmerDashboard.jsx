@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import DashboardNavBar from '../../../components/DashboardNavBar';
 import { FarmerSideBarLinks } from '../../../utils/data';
 import DashboardLayout from '../../../Layouts/DashboardLayout';
+import Overview from '../../../Layouts/SharedLayout/Overview';
 
 const FarmerDashboard = () => {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -15,12 +16,12 @@ const FarmerDashboard = () => {
 					searchTerm={searchTerm}
 					setSearchTerm={setSearchTerm}
 				/>
-				{/* <Routes>
+				<Routes>
 					<Route
 						path='/'
 						element={<Overview />}
 					></Route>
-				</Routes> */}
+				</Routes>
 			</div>
 		</div>
 	);

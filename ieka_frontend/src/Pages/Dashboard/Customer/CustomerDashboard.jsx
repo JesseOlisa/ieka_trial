@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import DashboardNavBar from '../../../components/DashboardNavBar';
 import { CustomerSideBarLinks } from '../../../utils/data';
 import DashboardLayout from '../../../Layouts/DashboardLayout';
+import Overview from '../../../Layouts/SharedLayout/Overview';
+import Order from './Component/Order';
 
 const CustomerDashboard = () => {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +21,10 @@ const CustomerDashboard = () => {
 					<Route
 						path='/'
 						element={<Overview />}
+					></Route>
+					<Route
+						path='/order'
+						element={<Order />}
 					></Route>
 				</Routes>
 			</div>

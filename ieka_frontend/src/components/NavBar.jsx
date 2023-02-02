@@ -49,13 +49,13 @@ const NavBar = () => {
 					{showSignInOptions && (
 						<div className='absolute bg-white flex flex-col gap-3 text-base z-10 px-3 py-2 border-green-500 border top-10 -left-2'>
 							<Link
-								to='/dashboard/customer'
+								to='/dashboard/customer/'
 								className='text-gray-700 hover:font-semibold transition-all duration-150'
 							>
 								Customer
 							</Link>
 							<Link
-								to='/dashboard/farmer'
+								to='/dashboard/farmer/'
 								className='text-gray-700 hover:font-semibold transition-all duration-150'
 							>
 								Farmer
