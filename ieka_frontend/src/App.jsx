@@ -15,6 +15,7 @@ import {
 	CourierDashboard,
 	FarmerDashboard,
 } from './Pages/Dashboard/index';
+import Notfound from './Pages/404/Notfound';
 
 function App() {
 	return (
@@ -49,7 +50,7 @@ function App() {
 				{/* ADMIN */}
 				<Route element={<RequireAuth allowedRoles={['admin']} />}>
 					<Route
-						path='/dashboard/admin'
+						path='/dashboard/admin/*'
 						element={<AdminDashboard />}
 					/>
 				</Route>
@@ -57,7 +58,7 @@ function App() {
 				{/* FARMER */}
 				<Route element={<RequireAuth allowedRoles={['farmer']} />}>
 					<Route
-						path='/dashboard/farmer'
+						path='/dashboard/farmer/*'
 						element={<FarmerDashboard />}
 					/>
 				</Route>
@@ -65,17 +66,22 @@ function App() {
 				{/* COURIER */}
 				<Route element={<RequireAuth allowedRoles={['courier']} />}>
 					<Route
-						path='/dashboard/courier'
+						path='/dashboard/courier/*'
 						element={<CourierDashboard />}
 					/>
 				</Route>
 				{/* CUSTOMER */}
 				<Route element={<RequireAuth allowedRoles={['customer']} />}>
 					<Route
-						path='/dashboard/customer'
+						path='/dashboard/customer/*'
 						element={<CustomerDashboard />}
 					/>
 				</Route>
+
+				<Route
+					path='*'
+					element={<Notfound />}
+				/>
 			</Routes>
 		</div>
 	);

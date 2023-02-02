@@ -5,6 +5,7 @@ import { HomePage, AboutUs, Categories } from './index';
 
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import Notfound from '../404/Notfound';
 
 const Home = () => {
 	return (

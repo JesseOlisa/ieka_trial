@@ -15,12 +15,12 @@ const CustomerDashboard = () => {
 					searchTerm={searchTerm}
 					setSearchTerm={setSearchTerm}
 				/>
-				{/* <Routes>
+				<Routes>
 					<Route
 						path='/'
 						element={<Overview />}
 					></Route>
-				</Routes> */}
+				</Routes>
 			</div>
 		</div>
 	);
