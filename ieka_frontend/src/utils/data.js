@@ -10,7 +10,7 @@ import {
 	Transactions,
 } from '../assets/icons/index';
 
-export const SideBarLinks = [
+export const CustomerSideBarLinks = [
 	{
 		title: '',
 		name: 'Overview',
@@ -20,6 +20,34 @@ export const SideBarLinks = [
 		title: 'order',
 		name: 'Order',
 		logo: Orders,
+	},
+	{
+		title: 'customers',
+		name: 'Customers',
+		logo: Customers,
+	},
+	{
+		title: 'reports',
+		name: 'Reports',
+		logo: Reports,
+	},
+	{
+		title: 'transactions',
+		name: 'Transactions',
+		logo: Transactions,
+	},
+	{
+		title: 'shipment',
+		name: 'Shipment',
+		logo: Shipment,
+	},
+];
+
+export const FarmerSideBarLinks = [
+	{
+		title: '',
+		name: 'Overview',
+		logo: Overview,
 	},
 	{
 		title: 'products',
@@ -48,6 +76,19 @@ export const SideBarLinks = [
 	},
 ];
 
+export const CourierSideBarLinks = [
+	{
+		title: '',
+		name: 'Overview',
+		logo: Overview,
+	},
+	{
+		title: 'courier',
+		name: 'Couriers',
+		logo: Orders,
+	},
+];
+
 export const SettingsLinks = [
 	{
 		title: 'help-center',
@@ -58,6 +99,64 @@ export const SettingsLinks = [
 		title: 'settings',
 		name: 'Settings',
 		logo: Settings,
+	},
+];
+
+export const AdminSideBarLinks = [
+	{
+		title: '',
+		name: 'Overview',
+		logo: Overview,
+	},
+	{
+		title: 'courier',
+		name: 'Courier',
+		logo: Orders,
+	},
+	{
+		title: 'users',
+		name: 'Users',
+		logo: Products,
+	},
+	{
+		title: 'farmers',
+		name: 'Farmers',
+		logo: Shipment,
+	},
+	{
+		title: 'transactions',
+		name: 'Transactions',
+		logo: Customers,
+	},
+	{
+		title: 'investors',
+		name: 'Investors',
+		logo: Reports,
+	},
+	{
+		title: 'reports',
+		name: 'Reports',
+		logo: Transactions,
+	},
+	{
+		title: 'account-issues',
+		name: 'Account Issues',
+		logo: Shipment,
+	},
+	{
+		title: 'reviews',
+		name: 'Reviews',
+		logo: Shipment,
+	},
+	{
+		title: 'customers',
+		name: 'Customers',
+		logo: Shipment,
+	},
+	{
+		title: 'desk-offices',
+		name: 'Desk Offices',
+		logo: Shipment,
 	},
 ];
 

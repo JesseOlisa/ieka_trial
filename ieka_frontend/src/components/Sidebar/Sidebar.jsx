@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import { SideBarLinks, SettingsLinks } from '../../utils/data';
+import { SettingsLinks } from '../../utils/data';
 
 const isNotActiveStyle =
 	'flex items-center py-3 w-full px-7 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
@@ -21,7 +21,7 @@ const Sidebar = ({ closeSidebar, sideBarLinks }) => {
 						<h1 className='text-5xl font-extrabold text-green-800'>ieka</h1>
 					</Link>
 					<div className='flex flex-col gap-1 text-gray-600'>
-						{SideBarLinks.map((sidebarLink) => (
+						{sideBarLinks.map((sidebarLink) => (
 							<NavLink
 								key={sidebarLink.title}
 								to={`/dashboard/${sidebarLink.title}`}
