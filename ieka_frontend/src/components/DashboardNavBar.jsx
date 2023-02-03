@@ -24,6 +24,7 @@ const DashboardNavBar = ({ searchTerm, setSearchTerm }) => {
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 					className='pl-7'
+					autoComplete='off'
 				/>
 			</div>
 			<div className='text-gray-500 relative hidden md:block'>
