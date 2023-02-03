@@ -8,6 +8,7 @@ import {
 	Settings,
 	Shipment,
 	Transactions,
+	Chat,
 } from '../assets/icons/index';
 
 export const CustomerSideBarLinks = [
@@ -22,9 +23,9 @@ export const CustomerSideBarLinks = [
 		logo: Orders,
 	},
 	{
-		title: 'customers',
-		name: 'Customers',
-		logo: Customers,
+		title: 'chat',
+		name: 'Chat',
+		logo: Chat,
 	},
 	{
 		title: 'reports',
@@ -55,9 +56,9 @@ export const FarmerSideBarLinks = [
 		logo: Products,
 	},
 	{
-		title: 'customers',
-		name: 'Customers',
-		logo: Customers,
+		title: 'chat',
+		name: 'Chat',
+		logo: Chat,
 	},
 	{
 		title: 'reports',

@@ -20,7 +20,7 @@ const FarmerDashboard = () => {
 					<Route
 						path='/'
 						element={<Overview />}
-					></Route>
+					/>
 				</Routes>
 			</div>
 		</div>
