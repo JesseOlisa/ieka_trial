@@ -5,6 +5,7 @@ import { CustomerSideBarLinks } from '../../../utils/data';
 import DashboardLayout from '../../../Layouts/DashboardLayout';
 import Overview from '../../../Layouts/SharedLayout/Overview';
 import Order from './Component/Order';
+import Transactions from '../../../Layouts/SharedLayout/Transactions';
 
 const CustomerDashboard = () => {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +26,11 @@ const CustomerDashboard = () => {
 					<Route
 						path='/order'
 						element={<Order />}
-					></Route>
+					/>
+					<Route
+						path='/transactions'
+						element={<Transactions />}
+					/>
 				</Routes>
 			</div>
 		</div>
