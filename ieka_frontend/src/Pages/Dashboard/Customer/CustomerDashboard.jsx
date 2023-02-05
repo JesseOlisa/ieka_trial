@@ -6,6 +6,7 @@ import DashboardLayout from '../../../Layouts/DashboardLayout';
 import Overview from '../../../Layouts/SharedLayout/Overview';
 import Order from './Component/Order';
 import Transactions from '../../../Layouts/SharedLayout/Transactions';
+import Report from '../../../Layouts/SharedLayout/Report';
 
 const CustomerDashboard = () => {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -30,6 +31,10 @@ const CustomerDashboard = () => {
 					<Route
 						path='/transactions'
 						element={<Transactions />}
+					/>
+					<Route
+						path='/reports'
+						element={<Report />}
 					/>
 				</Routes>
 			</div>
