@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { Success } from '../../assets/icons';
 
 const Report = () => {
 	const [defaulter, setdefaulter] = useState(null);
 	const [title, setTitle] = useState(null);
 	const [idNumber, setIdNumber] = useState(null);
 	const [complaint, setComplaint] = useState(null);
-	const [success, setSuccess] = useState(true);
+	const [success, setSuccess] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -18,14 +19,14 @@ const Report = () => {
 		};
 		console.log(reportInfo);
 		setSuccess(true);
-		setComplaint(null);
-		setIdNumber(null);
-		setTitle(null);
-		setdefaulter(null);
+		setComplaint('');
+		setIdNumber('');
+		setTitle('');
+		setdefaulter('');
 
 		setTimeout(() => {
 			setSuccess(false);
-		}, 1500);
+		}, 1800);
 	};
 
 	return (
@@ -64,6 +65,7 @@ const Report = () => {
 						<option
 							selected
 							disabled
+							value=''
 						>
 							Please Select
 						</option>
@@ -118,7 +120,12 @@ const Report = () => {
 
 			{success && (
 				<div className='absolute flex items-center justify-center bg-blackOverlay w-full h-screen top-0 left-0'>
-					<div className='bg-white rounded-lg px-4 py-5 text-center'>
+					<div className='bg-white rounded-lg px-4 py-8 text-center'>
+						<img
+							src={Success}
+							alt='success'
+							className='my-3 mx-auto'
+						/>
 						<h2 className='text-black font-semibold '>
 							Compliant filed Successfully
 						</h2>
