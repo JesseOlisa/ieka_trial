@@ -8,3 +8,4 @@ export { default as Settings } from './settings.png';
 export { default as Shipment } from './shipment.png';
 export { default as Transactions } from './Transactions.png';
 export { default as Chat } from './Chat.png';
+export { default as Success } from './success.png';
